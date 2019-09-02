@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>使用transform翻转文本内容</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <style>
+        li {
+            position: relative;
+            margin-top: 10px;
+            width: 150px;
+            height: 51px;
+            line-height: 51px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+            color: red;
+        }
+
+        li::before,
+        li::after {
+            position: absolute;
+            background-color: purple;
+            content: "";
+        }
+
+        li:first-child {
+            margin-top: 0;
+        }
+        .x-axis{
+            transform: scale3d(1, -1, 1);
+        }
+        .x-axis::after{
+            height: 1px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 25px;
+        }
+        .y-axis{
+            transform: scale3d(-1,1,1);
+
+        }
+        .y-axis::after{
+            height: 51px;
+            width: 1px;
+            position: absolute;
+            left: 75px;
+            top: 0;
+        }
+        .reverse{
+            transform: scale3d(-1,-1,1);
+        }
+        .reverse::before{
+            height: 1px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 25px;
+        }
+        .reverse::after{
+            height: 51px;
+            width: 1px;
+            position: absolute;
+            left: 75px;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul>
+            <li>正常文本</li>
+            <li class="x-axis">水平翻转</li>
+            <li class="y-axis">垂直翻转</li>
+            <li class="reverse">倒序翻转</li>
+        </ul>
+    </div>
+</body>
+
+</html>
