@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        p{
+            border: 1px solid #ccc;
+            height: 100px;
+        }
+        .main{
+            background-color: antiquewhite;
+            width: 1000px;
+            height: 600px;
+            display: grid;
+            /* place-items: center; */
+            /* place-items: start; 左上角 */
+            place-items: end; 
+        }
+        .text{
+            width: 80px;
+            height: 80px;
+            background-color: aquamarine;
+        }
+        .list{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .item{
+            flex: 1 1 300px;
+            height: 100px;
+            border: 1px solid #333;
+        }
+        .test-main{
+            margin-top: 20px;
+            height: 120px;
+            display: grid;
+            grid-template-columns: minmax(150px, 25%) 1fr;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="text">ﾞ</div>
+    </div>
+    <div class="list">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <!-- 两栏布局 grid -->
+    <div class="test-main">
+        <p>left</p>
+        <p>main</p>
+    </div>
+</body>
+</html>
